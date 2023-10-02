@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Software Engineer',
                 'tags' => 'Java , Python',
-                'company' => 'Acme Cop',
+                'company' => 'Verizon Careers',
                 'location' => 'Nashville , MA',
                 'email' => 'email@gmail.com',
                 'website' => 'www.kabarak.com',
@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Frontend Engineer',
                 'tags' => 'Javascript , ReactJs',
-                'company' => 'Acme Cop',
+                'company' => 'Google',
                 'location' => 'Nashville , MA',
                 'email' => 'email2@gmail.com',
                 'website' => 'www.kabarak.com',
@@ -54,8 +54,29 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Full stack developer',
                 'tags' => 'Javascript , php',
-                'company' => 'Acme Cop',
+                'company' => 'LinkedIn',
                 'location' => 'Nashville , MA',
+                'email' => 'email1@gmail.com',
+                'website' => 'www.kabarak.com',
+                'description' => 'A software product which provides solution for baby health, baby food, baby tips, baby products, baby names, parenting etc. Here, user can view baby names, baby names by religion, baby tips, baby food and baby product. Admin can add and delete baby names.',
+            ] 
+        );
+        Listing::create(
+            [
+                'title' => 'Web developer',
+                'tags' => 'Ruby on Rills, php',
+                'company' => 'Spotify',
+                'location' => 'Nashville , MA',
+                'email' => 'email1@gmail.com',
+                'website' => 'www.kabarak.com',
+                'description' => 'A software product which provides solution for baby health, baby food, baby tips, baby products, baby names, parenting etc. Here, user can view baby names, baby names by religion, baby tips, baby food and baby product. Admin can add and delete baby names.',
+            ] 
+        );Listing::create(
+            [
+                'title' => 'Bckend Engineer',
+                'tags' => 'Python ,  Java',
+                'company' => 'LinkedIn',
+                'location' => 'Los Angeles, MA',
                 'email' => 'email1@gmail.com',
                 'website' => 'www.kabarak.com',
                 'description' => 'A software product which provides solution for baby health, baby food, baby tips, baby products, baby names, parenting etc. Here, user can view baby names, baby names by religion, baby tips, baby food and baby product. Admin can add and delete baby names.',

@@ -42,18 +42,26 @@ Route::get('/', function () {
  */
 
 //  /*  passing data to the view file through the model and displaying all the listings
-Route::get('/', function () {
-    return view('listings' , [
-        'heading' => 'Latest Listings' ,
+Route::get('/', [ListingController::class , 'index']
+   /* all this are passed into the controller file 
+   return view('listings' , [
         'Listings' => Listing::all()  // from the listing file use the all method and now all the data is coming from the model as opposed to the first scenario when all the data was coming from the route. can only be used for static functions
     ]);
-});
+    */
+);
 
 //  */
 
-// displaying a single listing based on the id passed by the user
-Route::get('/listings/{id}', function($id){
-    return view('listing', [ // pass an array that has a listing value and the value can come from a listing model find method and the listing id is passed.
-        'listing' => Listing::find($id)
-    ]);
-});
+// displaying a single listing based on the id passed by the user. the conditon checks for the id passed and if the passed id doesnt match any in the database returns a 404 error
+Route::get('/listings/{id}', [ListingController::class , 'show']
+
+    // $listing = Listing::find($id);
+    // if($listing){
+    //     return view('listing', [ // pass an array that has a listing value and the value can come from a listing model find method and the listing id is passed.
+    //         'listing' => $listing 
+    //     ]);
+    // }else{
+    //     abort('404');
+    // }
+    
+);
