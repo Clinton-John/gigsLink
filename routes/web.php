@@ -14,7 +14,13 @@ use App\Models\listing;  //bringing in the model we used
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+      // index -shows all the listings
+      //create- show form to create a new Listing
+      //show - show single listing
+      //store - store a new listing created
+      //edit - show form to edit listing
+      //update- update the listing
+      //destroy - delete the listing
 // Route::get('/', function () {
 //     return view('listings');
 // });
@@ -52,6 +58,11 @@ Route::get('/', [ListingController::class , 'index']
 
 //  */
 
+Route::get('/listings/create' , [ListingController::class , 'create']);
+   
+//the route involved in showing the post a job form
+Route::post('/listings' , [ListingController::class , 'store']);
+
 // displaying a single listing based on the id passed by the user. the conditon checks for the id passed and if the passed id doesnt match any in the database returns a 404 error
 Route::get('/listings/{id}', [ListingController::class , 'show']
 
@@ -65,3 +76,5 @@ Route::get('/listings/{id}', [ListingController::class , 'show']
     // }
     
 );
+
+// route function 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "837b47c2781ee8bb5f30c4a748efba5f",
+    "content-hash": "3798a7b7ed70f278095e2cec0c7220e2",
     "packages": [
         {
             "name": "brick/math",
@@ -969,6 +969,102 @@
                 }
             ],
             "time": "2023-08-27T10:19:19+00:00"
+        },
+        {
+            "name": "itsgoingd/clockwork",
+            "version": "v1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itsgoingd/clockwork.git",
+                "reference": "79021676cdc76473d9342b2aea0d65387fdbef5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/79021676cdc76473d9342b2aea0d65387fdbef5d",
+                "reference": "79021676cdc76473d9342b2aea0d65387fdbef5d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Clockwork": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "itsgoingd",
+                    "email": "itsgoingd@luzer.sk",
+                    "homepage": "http://twitter.com/itsgoingd"
+                }
+            ],
+            "description": "Server-side component of Clockwork, a Chrome extension for PHP development",
+            "homepage": "http://github.com/itsgoingd/clockwork",
+            "keywords": [
+                "debugging",
+                "logging",
+                "profiling"
+            ],
+            "support": {
+                "issues": "https://github.com/itsgoingd/clockwork/issues",
+                "source": "https://github.com/itsgoingd/clockwork/tree/master"
+            },
+            "time": "2013-12-04T23:30:42+00:00"
+        },
+        {
+            "name": "itsgoingd/clockwork-web",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itsgoingd/clockwork-web.git",
+                "reference": "6660af48dc9650ce23ce63fb5fb92b39e18babe6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork-web/zipball/6660af48dc9650ce23ce63fb5fb92b39e18babe6",
+                "reference": "6660af48dc9650ce23ce63fb5fb92b39e18babe6",
+                "shasum": ""
+            },
+            "require": {
+                "itsgoingd/clockwork": "1.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Clockwork": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "itsgoingd",
+                    "email": "itsgoingd@luzer.sk",
+                    "homepage": "http://twitter.com/itsgoingd"
+                }
+            ],
+            "description": "Embeddable webapp version of Clockwork, a Chrome extension for PHP development",
+            "homepage": "http://github.com/itsgoingd/clockwork-web",
+            "keywords": [
+                "debugging",
+                "logging",
+                "profiling"
+            ],
+            "support": {
+                "issues": "https://github.com/itsgoingd/clockwork-web/issues",
+                "source": "https://github.com/itsgoingd/clockwork-web/tree/v1.3.1"
+            },
+            "abandoned": true,
+            "time": "2015-08-01T15:01:00+00:00"
         },
         {
             "name": "laravel/framework",
