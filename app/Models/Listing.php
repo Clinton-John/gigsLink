@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Listing extends Model
 {
     use HasFactory;
+  // for you to add any property in the database from the forms created then you must add the line of code below
+    // protected $fillable = ['title' , 'company', 'location', 'website', 'email' , 'description' , 'tags'];
 
     public function scopeFilter($query , array $filters){
         // the scopeFilter funtion is used to filter from a database the tag thats clicked and only show the tag to the screen
