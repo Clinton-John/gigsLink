@@ -35,7 +35,7 @@ class ListingController extends Controller
     }
 
     public function store(Request $request){
-          // validating the form fields whena user posts a job and storing the data in a variable formFields
+          // validating the form fields when a user posts a job and storing the data in a variable formFields
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required' , Rule::unique('listings' , 'company')],
@@ -56,4 +56,39 @@ class ListingController extends Controller
     }
 
 
+       //show the edit form 
+    public function edit(Listing $listing){
+      return view('listings.edit' , ['listing' => $listing]);
+    }
+     //update the listing data
+public function update(Request $request , Listing $listing){
+    // validating the form fields when a user posts a job and storing the data in a variable formFields
+  $formFields = $request->validate([
+      'title' => 'required',
+      'company' => 'required' ,
+       'location' => 'required',
+       'website' => 'required', 
+       'email' => ['required' , 'email'],
+       'tags' => 'required',
+       'description' => 'required'
+   ]);
+ 
+  //  if a user uploads an image then take the logo , create a folder named logos in the storage-public folder and then using 
+   if($request->hasFile('logo')){
+      $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+   }
+
+//    $listing->update($formFields);
+$listing->update($formFields);
+return redirect('/')->with('message', 'Gig updated successfully');
+  
+//    return back()->with('message' , 'Listing Updated Successfully!');
+}
+
+
+// Delete Listing
+public function destroy(Listing $listing){
+     $listing->delete();
+     return redirect('/')->with('message', 'Gig deleted successfully');
+}
 }

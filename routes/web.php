@@ -58,10 +58,28 @@ Route::get('/', [ListingController::class , 'index']
 
 //  */
 
+
+   // post a new job route
 Route::get('/listings/create' , [ListingController::class , 'create']);
-   
+
+
 //the route involved in showing the post a job form
 Route::post('/listings' , [ListingController::class , 'store']);
+
+
+// Show edit form
+Route::get('/listings/{listing}/edit' , [ListingController::class , 'edit']);
+
+
+//Update the Listings
+Route::put('/listings/{listing}' , [ListingController::class , 'update']);
+
+
+
+   // delete Listing
+Route::delete('/listings/{listing}' , [ListingController::class , 'destroy']);
+
+
 
 // displaying a single listing based on the id passed by the user. the conditon checks for the id passed and if the passed id doesnt match any in the database returns a 404 error
 Route::get('/listings/{id}', [ListingController::class , 'show']
