@@ -95,4 +95,20 @@ Route::get('/listings/{id}', [ListingController::class , 'show']
     
 );
 
-// route function 
+// Show register/ create form
+Route::get('/register', [UserController::class , 'create']) ;
+
+// create a new user
+Route::post('/users' , [UserController::class , 'store']);
+
+
+//log user out
+Route::post('/logout' , [UserController::class , 'logout']);
+
+
+   //show Login form
+Route::get('/login' , [UserController::class , 'login']);
+
+
+// log in user
+Route::post('/users/authenticate' , [UserController::class , 'authenticate']);
