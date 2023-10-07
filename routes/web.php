@@ -60,24 +60,25 @@ Route::get('/', [ListingController::class , 'index']
 
 
    // post a new job route
-Route::get('/listings/create' , [ListingController::class , 'create']);
+// Route::get('/listings/create' , [ListingController::class , 'create']);
+Route::get('/listings/create' , [ListingController::class , 'create'])->middleware('auth'); // the middleware makes the form to only show the form when a user is logged in. the middleware is in the middleware->authenticate
 
 
 //the route involved in showing the post a job form
-Route::post('/listings' , [ListingController::class , 'store']);
+Route::post('/listings' , [ListingController::class , 'store'])->middleware('auth');
 
 
 // Show edit form
-Route::get('/listings/{listing}/edit' , [ListingController::class , 'edit']);
+Route::get('/listings/{listing}/edit' , [ListingController::class , 'edit'])->middleware('auth');
 
 
 //Update the Listings
-Route::put('/listings/{listing}' , [ListingController::class , 'update']);
+Route::put('/listings/{listing}' , [ListingController::class , 'update'])->middleware('auth');
 
 
 
    // delete Listing
-Route::delete('/listings/{listing}' , [ListingController::class , 'destroy']);
+Route::delete('/listings/{listing}' , [ListingController::class , 'destroy'])->middleware('auth');
 
 
 
@@ -96,18 +97,18 @@ Route::get('/listings/{id}', [ListingController::class , 'show']
 );
 
 // Show register/ create form
-Route::get('/register', [UserController::class , 'create']) ;
+Route::get('/register', [UserController::class , 'create'])->middleware('guest'); //guest prevents the user from accessing the page he shouldnt when he tries accessing directly from the url and it redirects the user to / directory. if it redirects to a dfrnt directory then change in the route service providers to the / directory 
 
 // create a new user
 Route::post('/users' , [UserController::class , 'store']);
 
 
 //log user out
-Route::post('/logout' , [UserController::class , 'logout']);
+Route::post('/logout' , [UserController::class , 'logout'])->middleware('auth');
 
 
    //show Login form
-Route::get('/login' , [UserController::class , 'login']);
+Route::get('/login' , [UserController::class , 'login'])->name('login')->middleware('guest'); // naming a route using the name method
 
 
 // log in user
